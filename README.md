@@ -53,7 +53,7 @@ let
   sources = import ./nix/sources.nix {};
   pkgs = import sources.nixpkgs {};
 
-  golang-webdev = (import (pkgs.fetchGitHub { inherit (sources.golang-webdev) owner repo rev sha256; })).outputs.packages."${builtings.currentSystem}";
+  golang-webdev = (import (pkgs.fetchFromGitHub { inherit (sources.golang-webdev) owner repo rev sha256; })).outputs.packages."${builtins.currentSystem}";
 in
 {
   home.packages = [
