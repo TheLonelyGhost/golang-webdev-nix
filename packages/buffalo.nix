@@ -2,13 +2,16 @@
 
 let
   version = "0.18.1";
+
+  buffalo-pop = pkgs.callPackage ./buffalo-plugin-pop.nix {};
+
   deps = [
     pkgs.git
     pkgs.gcc
     pkgs.sqlite
     nodejs
     yarn
-    # buffalo-pop
+    buffalo-pop
   ];
 in
 pkgs.buildGoModule {
