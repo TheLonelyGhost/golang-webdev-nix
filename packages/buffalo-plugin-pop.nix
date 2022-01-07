@@ -24,7 +24,7 @@ pkgs.buildGoModule {
     pkgs.makeWrapper
   ] ++ deps;
 
-  tags = ["sqlite"];
+  tags = [ "sqlite" ];
 
   allowGoReference = true;
 

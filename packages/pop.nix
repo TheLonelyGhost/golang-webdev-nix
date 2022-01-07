@@ -23,7 +23,7 @@ pkgs.buildGoModule {
     pkgs.makeWrapper
   ] ++ deps;
 
-  tags = ["sqlite"];
+  tags = [ "sqlite" ];
 
   postInstall = ''
     cp -r "$GOPATH" "$out"
