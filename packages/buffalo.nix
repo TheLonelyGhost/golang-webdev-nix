@@ -33,7 +33,11 @@ pkgs.buildGoModule {
 
   allowGoReference = true;
 
-  vendorSha256 = "sha256-ZEEGvNcDQAjZOIuQyeE5v6+1TTsHYMRni8Fuj+feups=";
+  vendorSha256 = "sha256-qE+5ZYbXw6SIJKc2QtGWhbir1iH7be0Fmu+BvgG0wDs=";
+
+  patches = [
+    ./buffalo-no-jquery.patch
+  ];
 
   postInstall = ''
     cp -r "$GOPATH" "$out"
