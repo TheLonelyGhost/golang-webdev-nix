@@ -9,6 +9,7 @@ let
     pkgs.git
     pkgs.gcc
     pkgs.sqlite
+    pkgs.go
     nodejs
     yarn
     buffalo-pop
@@ -42,7 +43,6 @@ pkgs.buildGoModule {
   postInstall = ''
     cp -r "$GOPATH" "$out"
     wrapProgram $out/bin/buffalo --argv0 buffalo \
-      --set-default GO_BIN ${pkgs.go}/bin/go \
       --suffix PATH : ${pkgs.lib.makeBinPath deps}
   '';
 
